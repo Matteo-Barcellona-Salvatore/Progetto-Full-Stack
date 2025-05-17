@@ -1,0 +1,14 @@
+.hero {
+  background-color: #222;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.section {
+  padding: 40px 20px;
+  background-color: white;
+  margin: 10px auto;
+  max-width: 800px;
+  border-radius: 10px;
+}

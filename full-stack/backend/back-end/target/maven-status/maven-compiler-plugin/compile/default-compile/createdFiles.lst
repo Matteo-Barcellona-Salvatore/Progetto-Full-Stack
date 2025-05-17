@@ -1,0 +1,3 @@
+org\example\model\Task.class
+org\example\controller\TaskController.class
+org\example\Application.class

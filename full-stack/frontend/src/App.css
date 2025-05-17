@@ -1,0 +1,350 @@
+
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  user-select: none;
+}
+
+body, html, #root, .App {
+  height: 100%;
+  background: linear-gradient(135deg, #0b2613, #39ff14);
+  color: #d4f8d4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 40, 15, 0.85);
+  padding: 1.4rem 2.5rem;
+  box-shadow: 0 6px 20px rgba(0, 255, 20, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: saturate(220%) blur(14px);
+  border-radius: 0 0 18px 18px;
+  transition: background 0.3s ease;
+}
+
+.navbar:hover {
+  background: rgba(0, 40, 15, 0.95);
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 1.7rem;
+  letter-spacing: 3px;
+  color: #39ff14;
+  cursor: default;
+  user-select: none;
+  text-shadow:
+    0 0 10px #39ff14aa,
+    0 0 20px #0fff00cc;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 12px;
+  transition: 
+    background 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+    color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.4s ease;
+  user-select: none;
+  position: relative;
+  color: #a8f0a8;
+  text-shadow: 0 0 4px #33cc33aa;
+  box-shadow: inset 0 0 0 0 transparent;
+}
+
+.nav-links li:hover,
+.nav-links li.active {
+  background: #39ff14;
+  color: #041a03;
+  box-shadow: 0 0 14px #39ff14;
+}
+
+.nav-links li.active::after {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45%;
+  height: 4px;
+  background: #39ff14;
+  border-radius: 3px;
+  box-shadow: 0 0 12px #39ff14aa;
+}
+
+/* Home Page */
+.home {
+  max-width: 950px;
+  margin: 4rem auto 7rem;
+  padding: 0 1.5rem;
+  text-align: center;
+  animation: fadeInUp 1.2s ease forwards;
+  user-select: text;
+}
+
+.hero h1 {
+  font-size: 3.8rem;
+  font-weight: 900;
+  margin-bottom: 0.4rem;
+  letter-spacing: 5px;
+  text-shadow:
+    0 0 22px #39ff14,
+    0 0 35px #00ff00cc;
+  line-height: 1.1;
+}
+
+.highlight {
+  color: #39ff14;
+  text-shadow: 0 0 30px #00ff00cc;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #b3e6b3cc;
+  margin-bottom: 3rem;
+  letter-spacing: 1.4px;
+  font-style: italic;
+  text-shadow: 0 0 6px #000000bb;
+}
+
+.section {
+  background: rgba(0, 50, 20, 0.55);
+  margin-bottom: 3rem;
+  padding: 2.5rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0, 255, 20, 0.5);
+  backdrop-filter: saturate(180%) blur(18px);
+  text-align: left;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: default;
+}
+
+.section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 42px rgba(0,255,0,0.45);
+}
+
+.section h3 {
+  font-size: 2.3rem;
+  font-weight: 800;
+  margin-bottom: 1.3rem;
+  color: #39ff14;
+  text-shadow: 0 0 20px #00ff00cc;
+  letter-spacing: 0.8px;
+}
+
+.section p {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  color: #cce5ccee;
+  letter-spacing: 0.6px;
+  font-weight: 400;
+  user-select: text;
+}
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  font-size: 1.4rem;
+  color: #eaffea;
+  font-weight: 600;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-list li {
+  background: linear-gradient(135deg, #22ff55cc, #00ff88aa);
+  padding: 0.9rem 1.9rem;
+  border-radius: 40px;
+  box-shadow:
+    0 0 12px #22ff55aa,
+    inset 0 0 10px #00ff8888;
+  user-select: none;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skills-list li:hover {
+  transform: scale(1.1) rotate(-1deg);
+  box-shadow:
+    0 0 24px #22ff55ff,
+    inset 0 0 20px #00ff88cc;
+  filter: brightness(1.15);
+  cursor: pointer;
+}
+
+.section h3 {
+  text-align: center;
+
+}
+
+
+.welcome-user {
+  max-width: 650px;
+  margin: 7rem auto;
+  background: rgba(0, 70, 30, 0.7);
+  padding: 3rem 4rem;
+  border-radius: 28px;
+  box-shadow: 0 10px 45px rgba(0,255,0,0.55);
+  text-align: center;
+  animation: fadeInScale 1s ease forwards;
+  user-select: text;
+}
+
+.welcome-user h2 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #39ff14;
+  margin-bottom: 1rem;
+  user-select: none;
+  text-shadow:
+    0 0 25px #00ff00,
+    0 0 30px #00ff00cc;
+}
+
+.username {
+  color: #aaffaa;
+  text-shadow: 0 0 20px #aaffaaaa;
+}
+
+.welcome-user p {
+  font-size: 1.3rem;
+  color: #b3e6b3cc;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+  .section {
+    padding: 1.8rem 2rem;
+  }
+  .nav-links {
+    gap: 1.4rem;
+  }
+  .skills-list {
+    font-size: 1.2rem;
+  }
+  .welcome-user {
+    padding: 2rem 2.5rem;
+    margin: 4rem auto;
+  }
+
+  .navbar {
+    padding: 1rem 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .nav-links li {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .home {
+    margin: 3rem 1rem 5rem;
+    padding: 0 1rem;
+  }
+
+  .section h3 {
+    font-size: 1.8rem;
+  }
+
+  .section p {
+    font-size: 1.1rem;
+  }
+
+  .skills-list {
+    gap: 1rem;
+  }
+
+  .welcome-user h2 {
+    font-size: 2rem;
+  }
+
+  .welcome-user p {
+    font-size: 1.1rem;
+  }
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+#skills {
+  text-align: center;
+}
+
+#skills ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#skills li {
+  margin: 6px 0;
+  font-weight: 500;
+}
